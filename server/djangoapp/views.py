@@ -1,11 +1,11 @@
 # Uncomment the required imports before adding the code
 
-from django.http import HttpResponseRedirect, HttpResponse
+# from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, render, redirect
+# from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
-from django.contrib import messages
-from datetime import datetime
+# from django.contrib import messages
+# from datetime import datetime
 
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
@@ -126,7 +126,8 @@ def add_review(request):
     if (request.user.is_anonymous is False):
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            # response = post_review(data)
+            post_review(data)
             return JsonResponse({"status": 200})
         except Exception as e:
             return JsonResponse({"status": 401,
